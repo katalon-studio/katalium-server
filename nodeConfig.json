@@ -1,0 +1,16 @@
+{
+  "proxy": "com.katalon.kata.proxy.KatalonProxy",
+  "maxSession": 5,
+  "register": true,
+  "registerCycle": 5000,
+  "hub": "http://localhost:4444/grid/register",
+  "nodeStatusCheckTimeout": 5000,
+  "nodePolling": 5000,
+  "role": "node",
+  "unregisterIfStillDownAfter": 60000,
+  "downPollingLimit": 2,
+  "debug": false,
+  "servlets" : [],
+  "withoutServlets": [],
+  "custom": {}
+}

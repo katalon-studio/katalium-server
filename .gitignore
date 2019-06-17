@@ -1,0 +1,30 @@
+# Eclipse
+
+.classpath
+.project
+.settings
+
+# IntelliJ
+
+.idea
+**/*.iml
+
+# VSCode
+
+.vscode
+
+# Maven
+
+target
+
+### NodeJS ###
+web/node_modules
+web/dist
+src/main/resources
+
+
+### Application ###
+web/node
+
+# TestNG Reports
+**/testng-results.xml
