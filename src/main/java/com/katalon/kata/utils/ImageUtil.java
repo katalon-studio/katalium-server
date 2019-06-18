@@ -1,15 +1,16 @@
 package com.katalon.kata.utils;
 
+import org.apache.commons.codec.binary.Base64;
+
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.util.Base64;
 
 public class ImageUtil {
 
   public static BufferedImage base64ToImage(String base64) throws IOException {
     byte[] imageByte;
-    imageByte = Base64.getDecoder().decode(base64);
+    imageByte = Base64.decodeBase64(base64);;
     ByteArrayInputStream bis = new ByteArrayInputStream(imageByte);
     BufferedImage image = ImageIO.read(bis);
     bis.close();
@@ -22,7 +23,7 @@ public class ImageUtil {
       try (FileInputStream imageInFile = new FileInputStream(imageFile)) {
         byte imageData[] = new byte[(int) imageFile.length()];
         imageInFile.read(imageData);
-        base64Image = Base64.getEncoder().encodeToString(imageData);
+        base64Image = Base64.encodeBase64String(imageData);
       } catch (FileNotFoundException e) {
         System.out.println("Image not found" + e);
       } catch (IOException ioe) {
