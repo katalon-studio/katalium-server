@@ -1,7 +1,5 @@
 package com.katalon.kata.utils;
 
-import sun.misc.BASE64Decoder;
-
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
@@ -11,8 +9,7 @@ public class ImageUtil {
 
   public static BufferedImage base64ToImage(String base64) throws IOException {
     byte[] imageByte;
-    BASE64Decoder decoder = new BASE64Decoder();
-    imageByte = decoder.decodeBuffer(base64);
+    imageByte = Base64.getDecoder().decode(base64);
     ByteArrayInputStream bis = new ByteArrayInputStream(imageByte);
     BufferedImage image = ImageIO.read(bis);
     bis.close();
