@@ -10,7 +10,7 @@ pipeline {
         }
 
         stage('Build') {
-            stages {ka
+            stages {
                 stage ('Web') {
                     agent {
                         docker {
@@ -24,22 +24,29 @@ pipeline {
                     }
                 }
                 stage ('Backend') {
-                    agent any
+                    agent {
+                        docker {
+                                image 'maven'
+                                args '-v /$HOME/docker-cache-maven:/tmp/docker-cache-maven'
+                            }
+                    }
                     steps {
                         script {
                             unstash 'frontend'
                             sh 'ls web/build'
-                            sh 'rm -rf src/main/resources/static && mv web/build kata-server/src/main/resources/static'
+                            sh 'mkdir -p src/main/resources'
+                            sh 'rm -rf src/main/resources/static && mv web/build src/main/resources/static'
                             sh 'mvn -Duser.home=/tmp/docker-cache-maven clean package'
-                            stash includes: 'target/katalon-server.jar', name: 'jar'
+                            stash includes: 'target/kata-server.jar', name: 'jar'
                         }
                     }
-                }
-            }
-            post {
-                always {
-                    unstash 'jar'
-                    archiveArtifacts artifacts: 'target/*.jar'
+                    post {
+                        always {
+                            unstash 'jar'
+                            archiveArtifacts artifacts: 'target/kata-server.jar'
+                            // archiveArtifacts artifacts: 'script'
+                        }
+                    }
                 }
             }
         }
