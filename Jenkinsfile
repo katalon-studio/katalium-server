@@ -33,18 +33,26 @@ pipeline {
                     steps {
                         script {
                             unstash 'frontend'
-                            sh 'ls web/build'
-                            sh 'mkdir -p src/main/resources'
-                            sh 'rm -rf src/main/resources/static && mv web/build src/main/resources/static'
-                            sh 'mvn -Duser.home=/tmp/docker-cache-maven clean package'
-                            stash includes: 'target/kata-server.jar', name: 'jar'
+                            sh '''
+                                ls web/build
+                                mkdir -p src/main/resources
+                                rm -rf src/main/resources/static && mv web/build src/main/resources/static
+                                mvn -Duser.home=/tmp/docker-cache-maven clean package
+                            '''
+                            stash includes: 'target/kata-server.jar', name: 'zip'
                         }
                     }
                     post {
                         always {
-                            unstash 'jar'
-                            archiveArtifacts artifacts: 'target/kata-server.jar'
-                            // archiveArtifacts artifacts: 'script'
+                            unstash 'zip'
+                            sh '''
+                                rm -f katalium.zip
+                                rm -rf result
+                                mkdir -p result
+                                cp target/kata-server.jar result
+                                cp script/* result
+                            '''
+                            zip zipFile: 'katalium.zip', archive: true, glob: 'result/**'
                         }
                     }
                 }
