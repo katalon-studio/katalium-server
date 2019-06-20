@@ -1,6 +1,7 @@
 package com.katalon.kata.server;
 
 import com.katalon.kata.core.ApplicationProperties;
+import com.katalon.kata.core.KataliumBanner;
 import com.katalon.kata.core.PropertiesHelper;
 import com.katalon.kata.utils.KatalonUtil;
 import com.katalon.kata.utils.WebDriverUtil;
@@ -20,6 +21,7 @@ public class KatalonServer {
   public static void main(String[] args) {
 
     LOG.info("Katalium Version: " + propertiesHelper.get("version"));
+    new KataliumBanner().printBanner();
 
     ApplicationProperties applicationProperties = new ApplicationProperties();
     String email = applicationProperties.getEmail();
