@@ -43,8 +43,6 @@ public class KatalonServer {
 
     WebDriverUtil.setup();
     GridLauncherV3.main(args);
-
-    LOG.info("Katalium Version: " + propertiesHelper.get("version"));
   }
 
   private static void inputInfo(ApplicationProperties applicationProperties) {
