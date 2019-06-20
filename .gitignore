@@ -20,7 +20,7 @@ target
 ### NodeJS ###
 web/node_modules
 web/dist
-src/main/resources
+src/main/resources/static
 
 
 ### Application ###
