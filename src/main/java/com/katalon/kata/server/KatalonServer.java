@@ -1,6 +1,7 @@
 package com.katalon.kata.server;
 
 import com.katalon.kata.core.ApplicationProperties;
+import com.katalon.kata.core.PropertiesHelper;
 import com.katalon.kata.utils.KatalonUtil;
 import com.katalon.kata.utils.WebDriverUtil;
 
@@ -14,7 +15,11 @@ public class KatalonServer {
 
   private static final Logger LOG = Log.getLogger(KatalonServer.class);
 
+  private static PropertiesHelper propertiesHelper = PropertiesHelper.getInstance();
+
   public static void main(String[] args) {
+
+    LOG.info("Katalium Version: " + propertiesHelper.get("version"));
 
     ApplicationProperties applicationProperties = new ApplicationProperties();
     String email = applicationProperties.getEmail();
@@ -38,6 +43,8 @@ public class KatalonServer {
 
     WebDriverUtil.setup();
     GridLauncherV3.main(args);
+
+    LOG.info("Katalium Version: " + propertiesHelper.get("version"));
   }
 
   private static void inputInfo(ApplicationProperties applicationProperties) {
