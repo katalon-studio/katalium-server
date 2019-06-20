@@ -47,12 +47,13 @@ pipeline {
                             unstash 'zip'
                             sh '''
                                 rm -f katalium.zip
-                                rm -rf result
-                                mkdir -p result
-                                cp target/kata-server.jar result
-                                cp script/* result
+                                rm -rf katalium-server
+                                mkdir -p katalium-server
+                                cp target/kata-server.jar katalium-server
+                                cp script/* katalium-server
+                                chmod +x katalium-server/*
                             '''
-                            zip zipFile: 'katalium.zip', archive: true, glob: 'result/**'
+                            zip zipFile: 'katalium.zip', archive: true, glob: 'katalium-server/**'
                         }
                     }
                 }
