@@ -35,7 +35,6 @@ pipeline {
                             unstash 'frontend'
                             sh '''
                                 ls web/build
-                                mkdir -p src/main/resources
                                 rm -rf src/main/resources/static && mv web/build src/main/resources/static
                                 mvn -Duser.home=/tmp/docker-cache-maven clean package
                             '''
@@ -46,13 +45,16 @@ pipeline {
                         always {
                             unstash 'zip'
                             sh '''
-                                rm -f katalium.zip
-                                rm -rf result
-                                mkdir -p result
-                                cp target/kata-server.jar result
-                                cp script/* result
+                                rm -f katalium-server.tar.gz
+                                rm -rf katalium-server
+                                mkdir -p katalium-server
+                                cp target/kata-server.jar katalium-server
+                                cp script/* katalium-server
+                                chmod 777 katalium-server/*
+                                ls -al katalium-server 
+                                tar -czvf katalium-server.tar.gz katalium-server
                             '''
-                            zip zipFile: 'katalium.zip', archive: true, glob: 'result/**'
+                            archiveArtifacts artifacts: 'katalium-server.tar.gz'
                         }
                     }
                 }
