@@ -3,7 +3,7 @@
 
   <groupId>com.katalon.kata</groupId>
   <artifactId>kata-server</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
 
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -68,6 +68,7 @@
     <resources>
       <resource>
         <directory>${basedir}/src/main/resources</directory>
+        <filtering>true</filtering>
       </resource>
     </resources>
     <plugins>
