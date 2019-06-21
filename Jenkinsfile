@@ -38,23 +38,26 @@ pipeline {
                                 rm -rf src/main/resources/static && mv web/build src/main/resources/static
                                 mvn -Duser.home=/tmp/docker-cache-maven clean package
                             '''
-                            stash includes: 'target/kata-server.jar', name: 'zip'
+                            stash includes: 'target/kata-server.jar', name: 'jar'
                         }
                     }
-                    post {
-                        always {
-                            unstash 'zip'
+                }
+                stage ('Package') {
+                    agent any
+                    steps {
+                        script {
+                            unstash 'jar'
                             sh '''
-                                rm -f katalium-server.tar.gz
                                 rm -rf katalium-server
                                 mkdir -p katalium-server
                                 cp target/kata-server.jar katalium-server
                                 cp script/* katalium-server
                                 chmod 777 katalium-server/*
                                 ls -al katalium-server 
-                                tar -czvf katalium-server.tar.gz katalium-server
+                                rm -rf katalium-server.zip
+                                zip -r katalium-server.zip katalium-server
                             '''
-                            archiveArtifacts artifacts: 'katalium-server.tar.gz'
+                            archiveArtifacts artifacts: 'katalium-server.zip'
                         }
                     }
                 }
