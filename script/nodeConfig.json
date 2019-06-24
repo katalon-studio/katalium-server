@@ -1,0 +1,4 @@
+{
+  "proxy": "com.katalon.kata.proxy.KatalonProxy",
+  "hub": "http://localhost:4444"
+}

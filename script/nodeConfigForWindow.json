@@ -4,26 +4,22 @@
     {
       "browserName": "MicrosoftEdge",
       "platform": "WIN10",
-      "maxInstances": 1,
-      "seleniumProtocol": "WebDriver"
+      "maxInstances": 1
     },
     {
       "browserName": "internet explorer",
       "platform": "WINDOWS",
-      "maxInstances": 1,
-      "seleniumProtocol": "WebDriver"
+      "maxInstances": 1
     },
     {
       "browserName": "chrome",
       "platform": "WINDOWS",
-      "maxInstances": 5,
-      "seleniumProtocol": "WebDriver"
+      "maxInstances": 5
     },
     {
       "browserName": "firefox",
       "platform": "WINDOWS",
-      "maxInstances": 5,
-      "seleniumProtocol": "WebDriver"
+      "maxInstances": 5
     }
   ],
   "proxy": "com.katalon.kata.proxy.KatalonProxy",
