@@ -1,15 +1,4 @@
 {
-  "_comment" : "Configuration for Hub - hubConfig.json",
-  "host": "127.0.0.1",
-  "maxSessions": 5,
   "port": 4444,
-  "cleanupCycle": 5000,
-  "timeout": 300000,
-  "newSessionWaitTimeout": -1,
-  "servlets": ["com.katalon.kata.servlet.ListSessionsServlet", "com.katalon.kata.servlet.KatalonConsole", "com.katalon.kata.servlet.ScreenShotsServlet", "com.katalon.kata.servlet.ConfigSessionsServlet", "com.katalon.kata.servlet.SessionServlet"],
-  "prioritizer": null,
-  "capabilityMatcher": "org.openqa.grid.internal.utils.DefaultCapabilityMatcher",
-  "throwOnCapabilityNotPresent": true,
-  "nodePolling": 180000,
-  "platform": "WINDOWS"
+  "servlets": ["com.katalon.kata.servlet.ListSessionsServlet", "com.katalon.kata.servlet.KatalonConsole", "com.katalon.kata.servlet.ScreenShotsServlet", "com.katalon.kata.servlet.ConfigSessionsServlet", "com.katalon.kata.servlet.SessionServlet"]
 }
