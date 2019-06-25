@@ -2,12 +2,6 @@
 
 set -xe
 
-#hubURL=http://localhost:4444
-hubURL=
+echo "Please specify value of hub URL in the nodeConfig.json file"
 
-if [[ -z ${hubURL} ]]
-then
-    echo "Hub URL is not configured. Please specify value of hubURL variable in the sh file"
-else
-    java -jar kata-server.jar -role node -hub ${hubURL}/grid/register -nodeConfig nodeConfigForLinux.json
-fi
+java -jar kata-server.jar -role node -nodeConfig nodeConfig.json

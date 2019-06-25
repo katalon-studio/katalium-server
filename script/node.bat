@@ -1,10 +1,5 @@
 @echo on
 
-::set hubURL="http://localhost:4444"
-set hubURL=""
+echo "Please specify value of hub URL in the nodeConfigForWindow.json file"
 
-if %hubURL%=="" (
-    echo "Hub URL is not configured. Please specify value of hubURL variable in the sh file"
-) else (
-    java -jar kata-server.jar -role node -hub %hubURL%/grid/register -nodeConfig nodeConfigForWindow.json
-)
+java -jar kata-server.jar -role node -nodeConfig nodeConfigForWindow.json
