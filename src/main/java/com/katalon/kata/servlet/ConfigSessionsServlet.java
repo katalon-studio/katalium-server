@@ -1,9 +1,9 @@
 package com.katalon.kata.servlet;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.katalon.kata.utils.JsonUtil;
 import com.katalon.kata.core.SessionManager;
 import com.katalon.kata.entity.SessionConfiguration;
+import com.katalon.kata.utils.JsonUtil;
 import org.apache.commons.io.IOUtils;
 
 import javax.servlet.http.HttpServlet;

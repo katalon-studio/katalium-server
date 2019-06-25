@@ -1,12 +1,12 @@
 package com.katalon.kata.core;
 
+import org.seleniumhq.jetty9.util.log.Log;
+import org.seleniumhq.jetty9.util.log.Logger;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.stream.Collectors;
-
-import org.seleniumhq.jetty9.util.log.Log;
-import org.seleniumhq.jetty9.util.log.Logger;
 
 public class KataliumBanner {
 

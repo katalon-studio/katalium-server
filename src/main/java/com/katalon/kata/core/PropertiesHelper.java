@@ -1,10 +1,10 @@
 package com.katalon.kata.core;
 
-import java.io.InputStream;
-import java.util.Properties;
-
 import org.seleniumhq.jetty9.util.log.Log;
 import org.seleniumhq.jetty9.util.log.Logger;
+
+import java.io.InputStream;
+import java.util.Properties;
 
 public class PropertiesHelper {
 

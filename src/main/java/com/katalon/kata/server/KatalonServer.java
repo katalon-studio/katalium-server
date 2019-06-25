@@ -5,7 +5,6 @@ import com.katalon.kata.core.KataliumBanner;
 import com.katalon.kata.core.PropertiesHelper;
 import com.katalon.kata.utils.KatalonUtil;
 import com.katalon.kata.utils.WebDriverUtil;
-
 import org.beryx.textio.TextIO;
 import org.beryx.textio.TextIoFactory;
 import org.openqa.grid.selenium.GridLauncherV3;

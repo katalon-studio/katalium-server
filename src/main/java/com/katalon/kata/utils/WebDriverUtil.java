@@ -1,9 +1,8 @@
 package com.katalon.kata.utils;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.seleniumhq.jetty9.util.log.Log;
 import org.seleniumhq.jetty9.util.log.Logger;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class WebDriverUtil {
 

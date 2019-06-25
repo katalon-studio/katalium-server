@@ -8,6 +8,7 @@ import com.katalon.kata.utils.FileUtil;
 import com.katalon.kata.utils.HttpUtil;
 import com.katalon.kata.utils.ImageUtil;
 
+import javax.servlet.http.HttpServletRequest;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -17,8 +18,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
-
-import javax.servlet.http.HttpServletRequest;
 
 public class ScreenshotService {
 

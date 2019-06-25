@@ -2,11 +2,11 @@ package com.katalon.kata.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.katalon.kata.core.ExecutorService;
-import com.katalon.kata.utils.JsonUtil;
 import com.katalon.kata.core.SessionManager;
 import com.katalon.kata.entity.Screenshot;
 import com.katalon.kata.entity.Session;
 import com.katalon.kata.entity.TakeScreenshotResult;
+import com.katalon.kata.utils.JsonUtil;
 import com.katalon.kata.utils.LockUtil;
 import org.apache.commons.io.FileUtils;
 

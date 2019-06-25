@@ -1,7 +1,6 @@
 package com.katalon.kata.utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHeaders;
 import org.apache.http.HttpResponse;
