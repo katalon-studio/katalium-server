@@ -58,6 +58,8 @@ public class KatalonServer {
       .withInputMasking(true)
       .read(ApplicationProperties.PASSWORD_KEY);
 
+    textIO.getTextTerminal().abort();
+
     applicationProperties.setEmail(email);
     applicationProperties.setPassword(password);
   }
