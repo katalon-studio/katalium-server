@@ -1,4 +1,5 @@
 {
   "port": 4444,
-  "servlets": ["com.katalon.kata.servlet.ListSessionsServlet", "com.katalon.kata.servlet.KatalonConsole", "com.katalon.kata.servlet.ScreenShotsServlet", "com.katalon.kata.servlet.ConfigSessionsServlet", "com.katalon.kata.servlet.SessionServlet"]
+  "servlets": ["com.katalon.kata.servlet.ListSessionsServlet", "com.katalon.kata.servlet.KatalonConsole", "com.katalon.kata.servlet.ScreenShotsServlet", "com.katalon.kata.servlet.ConfigSessionsServlet", "com.katalon.kata.servlet.SessionServlet"],
+  "timeout": 60
 }
