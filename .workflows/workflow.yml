@@ -1,0 +1,14 @@
+name: KATCI-KataliumServer
+on:
+  push:
+    branches:
+      - github_action
+jobs:
+  run:
+    name: Run
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+    - name: Branch name
+      run: echo running on branch ${GITHUB_REF##*/}
