@@ -12,3 +12,8 @@ jobs:
       uses: actions/checkout@master
     - name: Branch name
       run: echo running on branch ${GITHUB_REF##*/}
+    - name: Setup node
+      uses: actions/setup-node@v1
+      run: cd web && npm install && npm test
+      with:
+        node-version: '10.x'
