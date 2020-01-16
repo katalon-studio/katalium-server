@@ -14,7 +14,8 @@ jobs:
       run: |
         echo running on branch ${GITHUB_REF##*/}
         apt -y install zip
-    - uses: actions/setup-node@v1
+    - name : build frontend
+      uses: actions/setup-node@v1
       run: cd web && npm install && npm run build
       with:
         node-version: '10.x'
