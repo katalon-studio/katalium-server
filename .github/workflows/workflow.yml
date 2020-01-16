@@ -10,10 +10,35 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
-    - name: Branch name
-      run: echo running on branch ${GITHUB_REF##*/}
-    - name: Setup node
-      uses: actions/setup-node@v1
-      run: cd web && npm install && npm test
+    - name: Pre steps
+      run: |
+        echo running on branch ${GITHUB_REF##*/}
+        apt -y install zip
+    - uses: actions/setup-node@v1
+      run: cd web && npm install && npm run build
       with:
         node-version: '10.x'
+    - name: Build backend
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+    - name: Build with Maven
+      run: | 
+        ls web/build
+        rm -rf src/main/resources/static && mv web/build src/main/resources/static
+        mvn -Duser.home=/tmp/docker-cache-maven clean package
+    - name: packaging Artifacts
+      run: |
+        rm -rf katalium-server
+        mkdir -p katalium-server
+        cp target/kata-server.jar katalium-server
+        cp script/* katalium-server
+        chmod 777 katalium-server/*
+        ls -al katalium-server 
+        rm -rf katalium-server.zip
+        zip -r katalium-server.zip katalium-server
+    - name:  Upload Artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: katalium-server
+        path: katalium-server.zip
