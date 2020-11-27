@@ -11,14 +11,6 @@ public class ApplicationProperties {
 
     private static final String CONFIG_FILE_PATH = System.getProperty("user.home") + File.separator + ".katalon" + File.separator +"framework.properties";
 
-    private static final String KATALON_SERVER_URL_KEY = "KATALON_SERVER_URL";
-
-    public static final String EMAIL_KEY = "KATALON_EMAIL";
-
-    public static final String PASSWORD_KEY = "KATALON_API_KEY";
-
-    private static final String DEFAULT_KATALON_SERVER_URL = "https://analytics.katalon.com";
-
     private static final Map<String, String> configurations = new HashMap<>();
 
     public ApplicationProperties() {
@@ -69,10 +61,6 @@ public class ApplicationProperties {
         if (value == null) {
             value = defaultValue;
         }
-//        if (value == null) {
-//            String errorMessage = "Cannot get configuration for key: " + key;
-//            throw new IllegalStateException(errorMessage);
-//        }
         return value;
     }
 
@@ -80,23 +68,4 @@ public class ApplicationProperties {
         configurations.put(key, value);
     }
 
-    public String getServerApiUrl() {
-        return getConfiguration(KATALON_SERVER_URL_KEY, DEFAULT_KATALON_SERVER_URL);
-    }
-
-    public String getEmail() {
-        return getConfiguration(EMAIL_KEY);
-    }
-
-    public String getPassword() {
-        return getConfiguration(PASSWORD_KEY);
-    }
-
-    public void setEmail(String email) {
-        putConfiguration(EMAIL_KEY, email);
-    }
-
-    public void setPassword(String password) {
-        putConfiguration(PASSWORD_KEY, password);
-    }
 }
