@@ -8,7 +8,7 @@
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <webdrivermanager.version>4.2.2</webdrivermanager.version>
+    <webdrivermanager.version>4.4.3</webdrivermanager.version>
     <selenium-server.version>3.141.59</selenium-server.version>
     <logback-classic.version>1.2.3</logback-classic.version>
     <jackson.version>2.11.3</jackson.version>
