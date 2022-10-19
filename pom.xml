@@ -11,7 +11,7 @@
     <webdrivermanager.version>4.2.2</webdrivermanager.version>
     <selenium-server.version>3.141.59</selenium-server.version>
     <logback-classic.version>1.2.3</logback-classic.version>
-    <jackson.version>2.11.3</jackson.version>
+    <jackson.version>2.13.4.1</jackson.version>
     <guava.version>30.0-jre</guava.version>
     <text-io.version>3.4.1</text-io.version>
     <commons-codec.version>1.15</commons-codec.version>
