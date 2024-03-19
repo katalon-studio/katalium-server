@@ -8,14 +8,14 @@
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <webdrivermanager.version>4.2.2</webdrivermanager.version>
+    <webdrivermanager.version>5.6.2</webdrivermanager.version>
     <selenium-server.version>3.141.59</selenium-server.version>
-    <logback-classic.version>1.2.3</logback-classic.version>
-    <jackson.version>2.11.3</jackson.version>
-    <guava.version>30.0-jre</guava.version>
+    <logback-classic.version>1.4.7</logback-classic.version>
+    <jackson.version>2.15.1</jackson.version>
+    <guava.version>31.1-jre</guava.version>
     <text-io.version>3.4.1</text-io.version>
     <commons-codec.version>1.15</commons-codec.version>
-    <httpclient.version>4.5.13</httpclient.version>
+    <httpclient.version>4.5.14</httpclient.version>
   </properties>
 
   <dependencies>
